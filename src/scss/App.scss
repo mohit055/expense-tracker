@@ -1,0 +1,220 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400&display=swap');
+
+$box-shadow : 0 1px 3px rgba(0, 0, 0, 0.12),
+0 1px 2px rgba(0, 0, 0, 0.24);
+$red: #c0392b;
+$green: #2ecc71;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #f7f7f7;
+    font-family: 'Lato', sans-serif;
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    width: 18rem;
+
+    h1 {
+        font-size: 1.5rem;
+        width: 100%;
+        text-align: center;
+        padding-bottom: .25em;
+        font-weight: 400;
+    }
+
+    .balance {
+        width: 100%;
+        padding: 1em 0.5em;
+
+        p {
+            font-size: .8rem;
+            letter-spacing: .00625rem;
+            text-transform: uppercase;
+            font-weight: 300;
+            padding: 0.25em;
+        }
+
+        h2 {
+            font-weight: 400;
+            font-size: 1.5rem;
+        }
+    }
+
+    .income-expense {
+        background-color: #fff;
+        display: flex;
+        justify-content: space-between;
+        box-shadow: $box-shadow;
+        padding: 1em;
+
+        &>div {
+            flex: 1;
+            text-align: center;
+
+            p {
+                font-size: .8rem;
+                padding-bottom: 0.3725rem;
+            }
+
+            h3 {
+                font-size: 1.1rem;
+                letter-spacing: .03125rem;
+            }
+        }
+
+        .income {
+            border-right: .25px solid #dedede;
+
+            h3 {
+                color: $green;
+            }
+        }
+
+        .expense {
+            border-left: .25px solid #dedede;
+
+            h3 {
+                color: $red;
+            }
+        }
+    }
+
+    .history {
+        padding: 1em 0.5em;
+
+        p {
+            font-size: 1rem;
+        }
+
+        hr {
+            margin: 0.5rem 0.125rem;
+            background-color: #dedede;
+        }
+
+        li {
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+            box-shadow: $box-shadow;
+            padding: 0.5em;
+            background-color: #fff;
+            color: #333;
+            margin: 10px 0;
+            position: relative;
+
+            .del-btn {
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                left: -20px;
+                padding: .125em .1875em;
+                color: #fff;
+                background-color: $red;
+                border: none;
+                display: grid;
+                place-items: center;
+                cursor: pointer;
+                opacity: 0;
+                transition: opacity ease-in 0.2s;
+                outline: none;
+            }
+
+            p {
+                font-size: 0.9rem;
+            }
+
+            h5 {
+                font-size: 1rem;
+            }
+
+            &:hover {
+                .del-btn {
+                    opacity: 1;
+                }
+            }
+        }
+
+        .minus {
+            border-right: 5px solid $red;
+        }
+
+        .plus {
+            border-right: 5px solid $green;
+        }
+    }
+
+    .new-transaction {
+        padding: 1em 0.5em;
+
+        p {
+            font-size: 1rem;
+        }
+
+        hr {
+            margin: 0.5rem 0.125rem;
+            background-color: #dedede;
+        }
+
+        label {
+            display: inline-block;
+            margin: 0.5em 0;
+            font-size: 0.9rem;
+            margin-bottom: 0 !important;
+
+            &::after {
+                content: ':';
+                display: inline-block;
+                font-size: 0.9rem;
+                color: #111;
+                padding-left: 0.125rem;
+            }
+        }
+
+        .comment {
+            font-weight: 300;
+            font-size: .7rem;
+            margin-bottom: .5em;
+        }
+
+        input[type='text'],
+        input[type='number'] {
+            border: 0.5px solid #dedede;
+            border-radius: 2px;
+            display: block;
+            font-size: 0.9rem;
+            padding: 0.4375rem;
+            width: 100%;
+            outline: none;
+        }
+
+        .add-btn {
+            cursor: pointer;
+            background-color: #9c88ff;
+            box-shadow: $box-shadow;
+            color: #fff;
+            border: none;
+            display: block;
+            font-size: 1rem;
+            padding: 0.58em 0.5em;
+            width: 100%;
+            margin-top: 1.3275em;
+            transform: scale(1.215);
+            outline: none;
+
+            &:hover,
+            &:focus {
+                background-color: #8e78fc;
+            }
+        }
+    }
+}
